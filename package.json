@@ -1,0 +1,9 @@
+{
+  "name": "estrutura-de-dados",
+  "version": "1.0.0",
+  "description": "Estudos de estrutura de dados com javascript",
+  "main": "index.js",
+  "repository": "git@github.com:moniqueaz/estrutura-de-dados.git",
+  "author": "Monique Azevedo",
+  "license": "MIT"
+}
