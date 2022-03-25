@@ -1,4 +1,4 @@
-import { Container, List, ItemList, Nav } from '../../components/Globals';
+import { Container, List, ItemList, Nav } from 'components/Globals';
 
 export const dataStructureList = [
   'array', 'pilha', 'fila', 'lista', 'conjunto', 'dicionário', 'recursão', 'árvore', 'heap', 'grafos',
