@@ -1,14 +1,18 @@
 import { Container, List, ItemList, Nav } from 'components/Globals';
 
-export const dataStructureList = [
-  'array', 'pilha', 'fila', 'lista', 'conjunto', 'dicionário', 'recursão', 'árvore', 'heap', 'grafos',
-];
+type ListType = {
+  [key: string]: string
+}
+
+const dataStructureList: ListType = {
+  array: 'array', pilha: 'pilha', fila: 'fila', lista: 'lista', conjunto: 'conjunto', dicionario: 'dicionário', recursao: 'recursão', arvore: 'árvore', heap: 'heap', grafos: 'grafos',
+};
 
 const Home = () => <Container>
   <List>
-    {dataStructureList.map(item => <ItemList key={item}>
+    {Object.keys(dataStructureList).map(item => <ItemList key={item}>
       <Nav to={item}>
-        {item}
+        {dataStructureList[item]}
       </Nav>
     </ItemList>)}
   </List>

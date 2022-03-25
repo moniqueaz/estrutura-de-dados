@@ -1,5 +1,5 @@
 import { Container } from 'components/Globals';
 
-const Home = () => <Container>Array</Container>;
+const Array = () => <Container>Array</Container>;
 
-export default Home;
+export default Array;
