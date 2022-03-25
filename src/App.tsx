@@ -3,17 +3,17 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Home from 'page/home';
-import Array from 'page/array';
-import Pilha from 'page/pilha';
-import Fila from 'page/fila';
-import Lista from 'page/lista';
-import Conjunto from 'page/conjunto';
-import Dicionario from 'page/dicionario';
-import Recursao from 'page/recursao';
-import Arvore from 'page/arvore';
-import Heap from 'page/heap';
-import Grafos from 'page/grafos';
+import Home from 'page';
+import Array from 'page/Array';
+import Pilha from 'page/Pilha';
+import Fila from 'page/Fila';
+import Lista from 'page/Lista';
+import Conjunto from 'page/Conjunto';
+import Dicionario from 'page/Dicionario';
+import Recursao from 'page/Recursao';
+import Arvore from 'page/Arvore';
+import Heap from 'page/Heap';
+import Grafos from 'page/Grafos';
 
 function App() {
   return (
