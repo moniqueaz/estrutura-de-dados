@@ -13,6 +13,8 @@ export default {
     normal: 400,
     bold: 600,
     sizes: {
+      xxxsmall: '0.8rem',
+      xxsmall: '1rem',
       xsmall: '1.2rem',
       small: '1.4rem',
       medium: '1.6rem',
@@ -23,7 +25,13 @@ export default {
     },
   },
   colors: {
-    mainBg: '#fafafa',
+    mainBg: '#FAFAFA',
+    secondaryDark: '#0B61B0',
+    secondary: '#0385FC',
+    primary: '#FC271C',
+    primaryDark: '#B00A02',
+    white: '#FFF',
+    black: '#000',
   },
   spacings: {
     xxsmall: '0.8rem',
