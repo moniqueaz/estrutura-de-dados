@@ -71,6 +71,10 @@ export const Code = styled.code`
       font-size: ${theme.font.sizes.xxxsmall};
       line-height: ${theme.font.sizes.medium};
       font-style: italic;
+
+      & .comment {
+        color: ${theme.colors.gray};
+      }
     `}
   `;
 

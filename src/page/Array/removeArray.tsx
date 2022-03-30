@@ -24,7 +24,7 @@ export const RemoveArray = () => <Block>
         </ItemArray>)
       }
       <ItemArray>
-        <Box yellow={true} small={true} width={100}>undefined</Box>
+        <Box type="warn" small={true} width={100}>undefined</Box>
         <Index>[17]</Index>
       </ItemArray>
     </ListArray>

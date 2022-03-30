@@ -17,13 +17,13 @@ export const PopArray = () => <Block>
   <Wrapper vertical={30}>
     <ListArray>
       {
-        arr.map((item, index) => <ItemArray key={item}>
+        arr.map(item => <ItemArray key={item}>
           <Box>{item}</Box>
           <Index>[{typeof item === 'number' ? item + 3 : item}]</Index>
         </ItemArray>)
       }
-      <ItemArray>
-        <Box yellow={true} small={true} width={100}>undefined</Box>
+      <ItemArray type="remove">
+        <Box type="remove">13</Box>
         <Index>[16]</Index>
       </ItemArray>
     </ListArray>

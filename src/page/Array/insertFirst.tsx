@@ -1,7 +1,7 @@
 import { Wrapper, Text, Code, Pre, Block, Span } from 'components/Globals';
 import { ListArray, Box, Index, ItemArray } from './styles';
 
-const arr = [1, 2, 3, 4, '...', 12, 13, 14];
+const arr = [1, 2, 3, 4, '...', 11, 12, 13];
 
 const ListOne = () => <ListArray>
   {
@@ -11,13 +11,13 @@ const ListOne = () => <ListArray>
     </ItemArray>)
   }
   <ItemArray>
-    <Box yellow={true}>...</Box>
-    <Index>[14]</Index>
+    <Box type="warn">...</Box>
+    <Index>[13]</Index>
   </ItemArray>
 </ListArray>;
 const ListTwo = () => <ListArray>
   <ItemArray>
-    <Box yellow={true}></Box>
+    <Box type="warn"></Box>
     <Index>[0]</Index>
   </ItemArray>
   {
@@ -28,8 +28,8 @@ const ListTwo = () => <ListArray>
   }
 </ListArray>;
 const ListTree = () => <ListArray>
-  <ItemArray red={true}>
-    <Box red={true}>0</Box>
+  <ItemArray type="include">
+    <Box type="include">0</Box>
     <Index>[0]</Index>
   </ItemArray>
   {
@@ -44,6 +44,10 @@ export const InsertFirstArray = () => <Block>
   <Text>Inserindo um elemento na primeira posição</Text>
   <Pre>
     <Code>
+      <div className="comment">
+        {`
+          // [1,2,3,4,5,6,7,8,9,10,11,12,13]`}
+      </div>
       {
         `
         Array.proptype.insertFirstPosition = function(value) {
@@ -52,16 +56,20 @@ export const InsertFirstArray = () => <Block>
           };
           this[0] = value;
         };
-        nunbers.insertFirstPositions(-1);
-      `
+        nunbers.insertFirstPositions(-1);`
       }
+      <div className="comment">
+        {`
+          // [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+        `}
+      </div>
     </Code>
   </Pre>
   <Wrapper vertical={30}>
     <ListOne />
     <Text direction="right">
       <Span>
-        [length = 14]
+        [length = 13]
       </Span>
     </Text>
   </Wrapper>
@@ -69,7 +77,7 @@ export const InsertFirstArray = () => <Block>
     <ListTwo />
     <Text direction="right">
       <Span>
-        [length = 15]
+        [length = 14]
       </Span>
     </Text>
   </Wrapper>
@@ -77,7 +85,7 @@ export const InsertFirstArray = () => <Block>
     <ListTree />
     <Text direction="right">
       <Span>
-        [length = 15]
+        [length = 14]
       </Span>
     </Text>
   </Wrapper>

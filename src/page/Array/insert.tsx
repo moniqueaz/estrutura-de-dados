@@ -8,11 +8,18 @@ export const InsertArray = () => <Block>
   <Text>Acrescentando elementos</Text>
   <Pre>
     <Code>
-      {
-        `
-          numbers[numbers.length] = 10;
-        `
+      <div className="comment">
+        {`
+          // [1,2,3,4,5,6,7,8,9]`}
+      </div>
+      {`
+          numbers[numbers.length] = 10;`
       }
+      <div className="comment">
+        {`
+          // [1,2,3,4,5,6,7,8,9,10]
+        `}
+      </div>
     </Code>
   </Pre>
   <Wrapper vertical={30}>
@@ -23,8 +30,8 @@ export const InsertArray = () => <Block>
           <Index>[{index}]</Index>
         </ItemArray>)
       }
-      <ItemArray red={true}>
-        <Box red={true}>10</Box>
+      <ItemArray type="include">
+        <Box type="include">10</Box>
         <Index>[9]</Index>
       </ItemArray>
     </ListArray>

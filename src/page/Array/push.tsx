@@ -7,12 +7,20 @@ export const PushArray = () => <Block>
   <Text>Usando o metodo push</Text>
   <Pre>
     <Code>
+      <div className="comment">
+        {`
+          // [1,2,3,4,5,6,7,8,9,10]`}
+      </div>
       {
         `
-        numbers.push(11);
-        numbers.push(12, 13);
-      `
+          numbers.push(11);
+          numbers.push(12, 13);`
       }
+      <div className="comment">
+        {`
+          // [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        `}
+      </div>
     </Code>
   </Pre>
   <Wrapper vertical={30}>
@@ -23,8 +31,8 @@ export const PushArray = () => <Block>
           <Index>[{index}]</Index>
         </ItemArray>)
       }
-      <ItemArray red={true}>
-        <Box red={true}>11</Box>
+      <ItemArray type="include">
+        <Box type="include">11</Box>
         <Index>[10]</Index>
       </ItemArray>
     </ListArray>
@@ -37,8 +45,8 @@ export const PushArray = () => <Block>
           <Index>[{index}]</Index>
         </ItemArray>)
       }
-      <ItemArray red={true}>
-        <Box red={true}>12</Box>
+      <ItemArray type="include">
+        <Box type="include">12</Box>
         <Index>[13]</Index>
       </ItemArray>
     </ListArray>

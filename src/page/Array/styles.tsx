@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components';
 import { List, ItemList } from 'components/Globals';
 
 type StyleProps = {
-  red?: boolean
-  yellow?: boolean
+  type?: 'include' | 'warn' | 'remove' | 'none'
   moveLeft?: boolean
   moveRight?: boolean
   small?: boolean
@@ -21,23 +20,40 @@ export const ListArray = styled(List)`
   `}
 `;
 
+const animation = {
+  include: css`
+    opacity: 0;
+    animation: include 5s linear infinite;
+    `,
+  remove: css`
+    opacity: 1;
+    animation: remove 5s linear infinite;
+  `,
+  warn: '',
+  none: '',
+};
+
 export const ItemArray = styled(ItemList)<StyleProps>`
-  ${( { theme, red, moveLeft, moveRight } ) => css`
+  ${( { theme, type = 'none', moveLeft, moveRight } ) => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
 
-    ${red && css`
-      animation: start 5s linear infinite;
-      opacity: 0;
-      @keyframes start {
-        0% {opacity: 0}
-        50% {opacity: 1}
-        100% {opacity: 1}
-      }
-    `}
+    ${animation[type]};
+
+    @keyframes include {
+      0% {opacity: 0}
+      50% {opacity: 1}
+      100% {opacity: 1}
+    }
+    @keyframes remove {
+      0% {opacity: 1}
+      50% {opacity: 1}
+      100% {opacity: 0}
+    }
+
     ${ moveRight && css`
       & + li{
 
@@ -94,22 +110,27 @@ export const ItemArray = styled(ItemList)<StyleProps>`
 `;
 
 export const Box = styled.div<StyleProps>`
-    ${( { theme, red, yellow, small, width = 50 } ) => css`
+    ${( { theme, type = 'none', small, width = 50 } ) => css`
     display: flex;
     justify-content: center;
     align-items: center;
     width: ${width}px;
     height: 50px;
-    border: 2px solid ${theme.colors.secondaryDark};
-    background-color: ${theme.colors.secondary};
-    ${red && css`
-      border: 2px dashed ${theme.colors.primaryDark};
-      background-color: ${theme.colors.primary};
+    border: 2px solid ${theme.colors.primaryDark};
+    background-color: ${theme.colors.primary};
+    ${type === 'include' && css`
+      border: 2px dashed ${theme.colors.secondaryDark};
+      background-color: ${theme.colors.secondary};
     `}
 
-    ${yellow && css`
+    ${type === 'warn' && css`
       border: 2px dashed ${theme.colors.ternaryDark};
       background-color: ${theme.colors.ternary};
+    `}
+
+    ${type === 'remove' && css`
+      border: 2px dashed ${theme.colors.quartenaryDark};
+      background-color: ${theme.colors.quartenary};
     `}
 
     ${small && css`

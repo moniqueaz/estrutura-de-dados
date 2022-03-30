@@ -17,8 +17,8 @@ export const UnshiftArray = () => <Block>
   </Pre>
   <Wrapper vertical={30}>
     <ListArray>
-      <ItemArray red={true}>
-        <Box red={true}>-1</Box>
+      <ItemArray type="include">
+        <Box type="include">-1</Box>
         <Index>[0]</Index>
       </ItemArray>
       {
@@ -31,12 +31,12 @@ export const UnshiftArray = () => <Block>
   </Wrapper>
   <Wrapper vertical={30}>
     <ListArray>
-      <ItemArray red={true}>
-        <Box red={true}>-3</Box>
+      <ItemArray type="include">
+        <Box type="include">-3</Box>
         <Index>[0]</Index>
       </ItemArray>
-      <ItemArray red={true}>
-        <Box red={true}>-2</Box>
+      <ItemArray type="include">
+        <Box type="include">-2</Box>
         <Index>[1]</Index>
       </ItemArray>
       {
