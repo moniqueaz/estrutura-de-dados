@@ -5,11 +5,12 @@ type StyleProps = {
   gap?: number
   vertical?: number
   horizontal?: number
+  direction?: string
 }
 
 export const Container = styled.main`
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1024px;
   width: 100%;
 `;
 
@@ -24,7 +25,7 @@ export const ItemList = styled.li`
 
 export const Title = styled.h1`
   ${( { theme } ) => css`
-    padding: 10px 0;
+    padding: 30px 0;
     text-align: center;
     font-size: ${theme.font.sizes.xxlarge};
   `}
@@ -32,17 +33,24 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.h2`
   ${( { theme } ) => css`
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     font-size: ${theme.font.sizes.medium};
   `}
 `;
 
-export const Text = styled.p`
+export const Text = styled.p<StyleProps>`
+  ${( { theme, direction } ) => css`
+      padding: 10px 0;
+      font-size: ${theme.font.sizes.small};
+      text-align: ${direction};
+    `}
+  `;
+
+export const Span = styled.span<StyleProps>`
   ${( { theme } ) => css`
-    padding: 10px 0;
-    font-size: ${theme.font.sizes.small};
-  `}
+    font-size: ${theme.font.sizes.xxsmall};
+`}
 `;
 
 export const Nav = styled(Link)`
@@ -58,12 +66,25 @@ export const Wrapper = styled.div<StyleProps>`
   `}
 `;
 
-export const Code = styled.div`
+export const Code = styled.code`
   ${( { theme } ) => css`
-    font-size: ${theme.font.sizes.xxxsmall};
-    line-height: ${theme.font.sizes.medium};
+      font-size: ${theme.font.sizes.xxxsmall};
+      line-height: ${theme.font.sizes.medium};
+      font-style: italic;
+    `}
+  `;
+
+export const Pre = styled.pre`
+  ${( { theme } ) => css`
     border-left: 2px solid ${theme.colors.secondaryDark};
-    padding-left: 5px;
-    font-style: italic;
+    background-color: ${theme.colors.pre};
+  `}
+
+`;
+
+export const Block = styled.div`
+  ${( { theme } ) => css`
+    border-bottom: 1px dotted ${theme.colors.black};
+    margin-bottom: ${theme.spacings.medium};
   `}
 `;
