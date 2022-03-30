@@ -3,8 +3,11 @@ import { List, ItemList } from 'components/Globals';
 
 type StyleProps = {
   red?: boolean
+  yellow?: boolean
   moveLeft?: boolean
   moveRight?: boolean
+  small?: boolean
+  width?: number
 }
 
 export const ListArray = styled(List)`
@@ -91,17 +94,26 @@ export const ItemArray = styled(ItemList)<StyleProps>`
 `;
 
 export const Box = styled.div<StyleProps>`
-    ${( { theme, red } ) => css`
+    ${( { theme, red, yellow, small, width = 50 } ) => css`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: ${width}px;
     height: 50px;
     border: 2px solid ${theme.colors.secondaryDark};
     background-color: ${theme.colors.secondary};
     ${red && css`
       border: 2px dashed ${theme.colors.primaryDark};
       background-color: ${theme.colors.primary};
+    `}
+
+    ${yellow && css`
+      border: 2px dashed ${theme.colors.ternaryDark};
+      background-color: ${theme.colors.ternary};
+    `}
+
+    ${small && css`
+      font-size: ${theme.font.sizes.xxxsmall}
     `}
   `}
 `;

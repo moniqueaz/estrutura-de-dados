@@ -27,13 +27,19 @@ export const PushArray = () => <Block>
         <Box red={true}>11</Box>
         <Index>[10]</Index>
       </ItemArray>
+    </ListArray>
+  </Wrapper>
+  <Wrapper vertical={30}>
+    <ListArray>
+      {
+        [...arr, 10, 11].map((item, index) => <ItemArray key={item}>
+          <Box>{item}</Box>
+          <Index>[{index}]</Index>
+        </ItemArray>)
+      }
       <ItemArray red={true}>
         <Box red={true}>12</Box>
-        <Index>[11]</Index>
-      </ItemArray>
-      <ItemArray red={true}>
-        <Box red={true}>13</Box>
-        <Index>[12]</Index>
+        <Index>[13]</Index>
       </ItemArray>
     </ListArray>
   </Wrapper>
