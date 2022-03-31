@@ -7,12 +7,6 @@ import { UnshiftArray } from './unshift';
 import { RemoveArray } from './removeArray';
 import { PopArray } from './pop';
 import { RemoveFirstArray } from './removeFirst';
-
-export type ListType = {
-  list?: number[] | string[]
-  setList?: Function
-}
-
 const Array = () => {
   return (
     <>

@@ -41,7 +41,7 @@
     ],
     "react/jsx-no-duplicate-props": "error",
     "no-console": [
-      "error",
+      "warn",
       {
         "allow": [
           "warn",

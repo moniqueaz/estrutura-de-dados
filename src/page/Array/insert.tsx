@@ -1,7 +1,8 @@
 import { Wrapper, Text, SubTitle, Code, Pre, Block } from 'components/Globals';
 import { ListArray, Box, Index, ItemArray } from './styles';
+import { insert } from './utils';
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const listInit = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export const InsertArray = () => <Block>
   <SubTitle>Inserindo um elemento no final do array</SubTitle>
@@ -10,14 +11,14 @@ export const InsertArray = () => <Block>
     <Code>
       <div className="comment">
         {`
-          // [1,2,3,4,5,6,7,8,9]`}
+          // [${listInit.map(item => item).join(',')}]`}
       </div>
       {`
           numbers[numbers.length] = 10;`
       }
       <div className="comment">
         {`
-          // [1,2,3,4,5,6,7,8,9,10]
+          // [${insert(listInit, 10).join(',')}]
         `}
       </div>
     </Code>
@@ -25,7 +26,7 @@ export const InsertArray = () => <Block>
   <Wrapper vertical={30}>
     <ListArray>
       {
-        arr.map((item, index) => <ItemArray key={item}>
+        listInit.map((item, index) => <ItemArray key={item}>
           <Box>{item}</Box>
           <Index>[{index}]</Index>
         </ItemArray>)

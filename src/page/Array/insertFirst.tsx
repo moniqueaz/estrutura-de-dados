@@ -1,13 +1,79 @@
 import { Wrapper, Text, Code, Pre, Block, Span } from 'components/Globals';
 import { ListArray, Box, Index, ItemArray } from './styles';
+import { getLength, insertFirst } from './utils';
 
-const arr = [1, 2, 3, 4, '...', 11, 12, 13];
+const listInit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+type ListType = {
+  newList: number[]
+}
+
+export const InsertFirstArray = () => {
+  const newList = insertFirst(listInit, 0);
+
+  return <Block>
+    <Text>Inserindo um elemento na primeira posição</Text>
+    <Pre>
+      <Code>
+        <div className="comment">
+          {`
+          // [${listInit.map(item => item).join(',')}]`}
+        </div>
+        {
+          `
+        Array.proptype.insertFirstPosition = function(value) {
+          for(let i = this.length; i >= 0; i--){
+            this[i] = this[i - 1];
+          };
+          this[0] = value;
+        };
+        nunbers.insertFirstPositions(0);`
+        }
+        <div className="comment">
+          {`
+          // [${newList.map(item => item).join(',')}]
+        `}
+        </div>
+      </Code>
+    </Pre>
+    <Wrapper vertical={30}>
+      <ListOne />
+      <Text direction="right">
+        <Span>
+          {
+            getLength(listInit)
+          }
+        </Span>
+      </Text>
+    </Wrapper>
+    <Wrapper vertical={30}>
+      <ListTwo />
+      <Text direction="right">
+        <Span>
+          {
+            getLength(newList)
+          }
+        </Span>
+      </Text>
+    </Wrapper>
+    <Wrapper vertical={30}>
+      <ListTree newList={newList} />
+      <Text direction="right">
+        <Span>
+          {
+            getLength(newList)
+          }
+        </Span>
+      </Text>
+    </Wrapper>
+  </Block>;
+};
 
 const ListOne = () => <ListArray>
   {
-    arr.map(item => <ItemArray key={item} moveRight={true}>
+    listInit.map((item, index) => <ItemArray key={item} moveRight={true}>
       <Box>{item}</Box>
-      <Index>[{typeof item === 'number' ? item - 1 : item}]</Index>
+      <Index>[{index}]</Index>
     </ItemArray>)
   }
   <ItemArray>
@@ -21,72 +87,17 @@ const ListTwo = () => <ListArray>
     <Index>[0]</Index>
   </ItemArray>
   {
-    arr.map(item => <ItemArray key={item}>
+    listInit.map((item, index) => <ItemArray key={item}>
       <Box>{item}</Box>
-      <Index>[{item}]</Index>
+      <Index>[{index + 1}]</Index>
     </ItemArray>)
   }
 </ListArray>;
-const ListTree = () => <ListArray>
-  <ItemArray type="include">
-    <Box type="include">0</Box>
-    <Index>[0]</Index>
-  </ItemArray>
+const ListTree = ( { newList }:ListType) => <ListArray>
   {
-    arr.map(item => <ItemArray key={item}>
-      <Box>{item}</Box>
-      <Index>[{item}]</Index>
+    newList.map((item, index) => <ItemArray key={item} type={ index === 0 ? 'include': 'none'}>
+      <Box type={ index === 0 ? 'include': 'none'}>{item}</Box>
+      <Index>[{index}]</Index>
     </ItemArray>)
   }
 </ListArray>;
-
-export const InsertFirstArray = () => <Block>
-  <Text>Inserindo um elemento na primeira posição</Text>
-  <Pre>
-    <Code>
-      <div className="comment">
-        {`
-          // [1,2,3,4,5,6,7,8,9,10,11,12,13]`}
-      </div>
-      {
-        `
-        Array.proptype.insertFirstPosition = function(value) {
-          for(let i = this.leght; i >= 0; i++){
-            this[i] = this[i - 1];
-          };
-          this[0] = value;
-        };
-        nunbers.insertFirstPositions(-1);`
-      }
-      <div className="comment">
-        {`
-          // [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
-        `}
-      </div>
-    </Code>
-  </Pre>
-  <Wrapper vertical={30}>
-    <ListOne />
-    <Text direction="right">
-      <Span>
-        [length = 13]
-      </Span>
-    </Text>
-  </Wrapper>
-  <Wrapper vertical={30}>
-    <ListTwo />
-    <Text direction="right">
-      <Span>
-        [length = 14]
-      </Span>
-    </Text>
-  </Wrapper>
-  <Wrapper vertical={30}>
-    <ListTree />
-    <Text direction="right">
-      <Span>
-        [length = 14]
-      </Span>
-    </Text>
-  </Wrapper>
-</Block>;

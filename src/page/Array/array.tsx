@@ -1,7 +1,7 @@
 import { Wrapper, Title, Block, Pre, Code } from 'components/Globals';
 import { ListArray, Box, Index, ItemArray } from './styles';
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const listInit = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 export const InitArray = () => <Block>
   <Title>Array</Title>
@@ -9,15 +9,14 @@ export const InitArray = () => <Block>
     <Code>
       {
         `
-          let numbers = [1,2,3,4,5,6,7,8,9];
-        `
+          let numbers = [${listInit.map(item => item).join(',')}];`
       }
     </Code>
   </Pre>
   <Wrapper vertical={30}>
     <ListArray>
       {
-        arr.map((item, index) => <ItemArray key={item}>
+        listInit.map((item, index) => <ItemArray key={item}>
           <Box>{item}</Box>
           <Index>[{index}]</Index>
         </ItemArray>)
