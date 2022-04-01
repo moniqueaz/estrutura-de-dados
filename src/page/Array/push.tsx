@@ -11,6 +11,7 @@ const content = (listPushTwo: number[]) => `
     numbers.push(12, 13);
 
     // [${listPushTwo.map((item: number) => item).join(',')}];
+
 `;
 
 export const PushArray = () => {

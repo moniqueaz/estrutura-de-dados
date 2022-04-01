@@ -100,6 +100,12 @@ const GlobalStyles: GlobalStyleComponent<
       font-size: initial;
       line-height: initial;
     }
+    pre{
+      border-bottom: 1px solid ${theme.colors.grayLight};
+      border-right: 1px solid ${theme.colors.grayLight};
+      border-left: 2px solid ${theme.colors.primary};
+      margin: 20px 0;
+    }
   `}
 `;
 

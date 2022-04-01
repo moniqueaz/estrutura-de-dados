@@ -66,29 +66,9 @@ export const Wrapper = styled.div<StyleProps>`
   `}
 `;
 
-export const Code = styled.code`
-  /* ${( { theme } ) => css`
-      font-size: ${theme.font.sizes.xxxsmall};
-      line-height: ${theme.font.sizes.medium};
-      font-style: italic;
-
-      & .comment {
-        color: ${theme.colors.gray};
-      }
-    `} */
-  `;
-
-export const Pre = styled.pre`
-  /* ${( { theme } ) => css`
-    border-left: 2px solid ${theme.colors.secondaryDark};
-    background-color: ${theme.colors.pre};
-  `} */
-
-`;
-
 export const Block = styled.div`
-  /* ${( { theme } ) => css`
-    border-bottom: 1px dotted ${theme.colors.black};
+  ${( { theme } ) => css`
+    border-bottom: 1px dotted ${theme.colors.grayDark};
     margin-bottom: ${theme.spacings.medium};
-  `} */
+  `}
 `;

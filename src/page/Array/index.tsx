@@ -2,7 +2,7 @@
 import { PushArray } from './push';
 import { InsertArray } from './insert';
 import { InsertFirstArray } from './insertFirst';
-import { InitArray } from './array';
+import { InitArray } from './initArray';
 import { UnshiftArray } from './unshift';
 import { RemoveArray } from './removeArray';
 import { PopArray } from './pop';

@@ -13,6 +13,7 @@ const content = (newList: number[]) => `
   }
 
   // [${newList.map((item: number) => typeof item !== 'undefined' ? item : 'undefined').join(',')}];
+
 `;
 
 export const RemoveFirstArray = () => {

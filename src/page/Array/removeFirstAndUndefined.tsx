@@ -24,10 +24,11 @@ const content = (newList: number[]) =>`
     for(let i = 0; i< this.length; i++){
       this[i] = this[i + 1];
     }
-    return this.reIndex(this)
+    return this.reIndex(this);
   }
 
-  // [${newList.map((item: number) => typeof item !== 'undefined' ? item : 'undefined').join(',')}]
+  // [${newList.map((item: number) => typeof item !== 'undefined' ? item : 'undefined').join(',')}];
+
 `;
 
 export const RemoveFirstAndUndefined = () => {

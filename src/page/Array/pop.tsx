@@ -9,7 +9,8 @@ const content = (newList: number[]) => `
 
   nunbers.pop();
 
-  // [${newList.map((item: number | undefined) => item).join(',')}]
+  // [${newList.map((item: number | undefined) => item).join(',')}];
+
 `;
 
 export const PopArray = () => {

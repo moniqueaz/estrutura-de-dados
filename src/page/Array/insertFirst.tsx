@@ -20,7 +20,8 @@ const content = (newList: number[]) => `
   };
   nunbers.insertFirstPositions(0);
 
-  // [${newList.map(item => item).join(',')}]
+  // [${newList.map(item => item).join(',')}];
+
 `;
 
 export const InsertFirstArray = () => {
@@ -29,7 +30,7 @@ export const InsertFirstArray = () => {
   return <Block>
     <Text>Inserindo um elemento na primeira posição</Text>
     <Code content={content(newList)} language="javascript"/>
-    <Wrapper vertical={30}>
+    <Wrapper vertical={60}>
       <ListOne />
       <Text direction="right">
         <Span>

@@ -11,6 +11,7 @@ const content = `
     numbers[numbers.length] = 10;
 
     // [${insert(listInit, 10).join(',')}];
+
 `;
 
 export const InsertArray = () => <Block>

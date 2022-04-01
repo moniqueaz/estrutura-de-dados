@@ -23,11 +23,11 @@ export const ListArray = styled(List)`
 const animation = {
   include: css`
     opacity: 0;
-    animation: include 5s linear infinite;
+    animation: include 3s linear infinite;
     `,
   remove: css`
     opacity: 1;
-    animation: remove 5s linear infinite;
+    animation: remove 3s linear infinite;
   `,
   warn: '',
   none: '',
@@ -50,7 +50,7 @@ export const ItemArray = styled(ItemList)<StyleProps>`
     }
     @keyframes remove {
       0% {opacity: 1}
-      50% {opacity: 1}
+      50% {opacity: 0}
       100% {opacity: 0}
     }
 

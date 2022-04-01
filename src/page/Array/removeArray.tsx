@@ -10,6 +10,7 @@ const content = (newList: (number | undefined)[]) => `
   numbers[numbers.length - 1] = undefined;
 
   // [${newList.map((item: number | undefined) => item).join(',')}];
+
 `;
 
 export const RemoveArray = () => {

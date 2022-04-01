@@ -11,6 +11,7 @@ const content = (listUnshiftTwo: number[]) =>`
   numbers.unshift(-3, -2);
 
   // [${listUnshiftTwo.map((item: number) => item).join(',')}];
+
 `;
 
 export const UnshiftArray = () => {
