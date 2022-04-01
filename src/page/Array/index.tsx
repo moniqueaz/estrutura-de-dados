@@ -7,6 +7,7 @@ import { UnshiftArray } from './unshift';
 import { RemoveArray } from './removeArray';
 import { PopArray } from './pop';
 import { RemoveFirstArray } from './removeFirst';
+import { RemoveFirstAndUndefined } from './removeFirstAndUndefined';
 const Array = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Array = () => {
       <RemoveArray />
       <PopArray />
       <RemoveFirstArray />
+      <RemoveFirstAndUndefined />
     </>
 
   );

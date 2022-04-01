@@ -50,9 +50,9 @@ const GlobalStyles: GlobalStyleComponent<
     html {
       font-size: 62.5%;
     }
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
+    html, body, div, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote,
+    a, abbr, acronym, address, big, cite,
     del, dfn, em, img, ins, kbd, q, s, samp,
     small, strike, strong, sub, sup, tt, var,
     b, u, i, center,
@@ -95,6 +95,10 @@ const GlobalStyles: GlobalStyleComponent<
     table {
       border-collapse: collapse;
       border-spacing: 0;
+    }
+    pre, code, span {
+      font-size: initial;
+      line-height: initial;
     }
   `}
 `;

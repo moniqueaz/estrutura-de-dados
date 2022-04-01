@@ -1,7 +1,17 @@
-import { Wrapper, Text, Code, Pre, Block } from 'components/Globals';
+import { Wrapper, Text, Block } from 'components/Globals';
 import { ListArray, Box, Index, ItemArray } from './styles';
+import { Code } from 'helper';
 
 const listInit= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const content = (listPushTwo: number[]) => `
+    // [${listInit.map(item => item).join(',')}];
+
+    numbers.push(11);
+    numbers.push(12, 13);
+
+    // [${listPushTwo.map((item: number) => item).join(',')}];
+`;
 
 export const PushArray = () => {
   const listPushOne = [...listInit];
@@ -11,24 +21,7 @@ export const PushArray = () => {
 
   return <Block>
     <Text>Usando o metodo push</Text>
-    <Pre>
-      <Code>
-        <div className="comment">
-          {`
-          // [${listInit.map(item => item).join(',')}]`}
-        </div>
-        {
-          `
-          numbers.push(11);
-          numbers.push(12, 13);`
-        }
-        <div className="comment">
-          {`
-          // [${listPushTwo.map((item: number) => item).join(',')}]
-          `}
-        </div>
-      </Code>
-    </Pre>
+    <Code content={content(listPushTwo)} language="javascript"/>
     <Wrapper vertical={30}>
       <ListArray>
         {
