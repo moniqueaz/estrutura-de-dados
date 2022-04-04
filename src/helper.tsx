@@ -10,7 +10,7 @@ export const Code = ( {
   content,
   language,
 }: HighlighterProps): JSX.Element => {
-  const highlighted = language ? hljs.highlight(language, content) : hljs.highlightAuto(content);
+  const highlighted = language ? hljs.highlight(content, { language } ) : hljs.highlightAuto(content);
 
   return (
     <pre className="hljs">
