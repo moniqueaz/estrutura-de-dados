@@ -25,7 +25,7 @@ export const RemoveArray = () => {
     <Wrapper vertical={30}>
       <ListArray>
         {
-          newList.map((item, index) => <ItemArray key={item}>
+          newList.map((item, index) => <ItemArray key={`${item}-${index}`}>
             {
               typeof item !== 'undefined' ? <Box>{item}</Box> : <Box type="warn" small={true} width={100}>undefined</Box>
             }

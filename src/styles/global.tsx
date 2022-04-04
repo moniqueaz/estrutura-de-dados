@@ -66,8 +66,6 @@ const GlobalStyles: GlobalStyleComponent<
       margin: 0;
       padding: 0;
       border: 0;
-      font-size: 100%;
-      font: inherit;
       vertical-align: baseline;
     }
     /* HTML5 display-role reset for older browsers */
@@ -78,8 +76,9 @@ const GlobalStyles: GlobalStyleComponent<
     body {
       line-height: 1;
       font-family: ${theme.font.family};
-      font-size: ${theme.font.sizes.medium};
+      font-size: 10px;
       background-color: ${theme.colors.mainBg};
+      font-size: 100%;
     }
     ol, ul {
       list-style: none;

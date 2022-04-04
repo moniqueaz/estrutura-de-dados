@@ -25,7 +25,7 @@ export const RemoveFirstArray = () => {
     <Wrapper vertical={30}>
       <ListArray>
         {
-          listInit.map((item, index) => <ItemArray key={item} moveLeft={true}>
+          listInit.map((item, index) => <ItemArray key={`${item}-${index}`} moveLeft={true}>
             <Box type={index === 0 ? 'warn' : 'none'}>{item}</Box>
             <Index>[{index}]</Index>
           </ItemArray>)
@@ -35,7 +35,7 @@ export const RemoveFirstArray = () => {
     <Wrapper vertical={30}>
       <ListArray>
         {
-          newList.map((item, index) => <ItemArray key={item}>
+          newList.map((item, index) => <ItemArray key={`${item}-${index}`}>
             {
               typeof item !== 'undefined' ? <Box>{item}</Box> : <Box type="warn" small={true} width={100}>undefined</Box>
             }
