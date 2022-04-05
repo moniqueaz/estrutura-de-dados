@@ -1,7 +1,7 @@
 
 import hljs from 'highlight.js';
 
-interface HighlighterProps {
+type HighlighterProps = {
   content: string;
   language?: string;
 }
@@ -18,3 +18,4 @@ export const Code = ( {
     </pre>
   );
 };
+

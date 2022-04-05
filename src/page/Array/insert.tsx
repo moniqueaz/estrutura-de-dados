@@ -33,3 +33,5 @@ export const InsertArray = () => <Block>
     </ListArray>
   </Wrapper>
 </Block>;
+
+export default InsertArray;

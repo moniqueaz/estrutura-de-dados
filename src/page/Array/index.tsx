@@ -1,25 +1,10 @@
-
-import { PushArray } from './push';
-import { InsertArray } from './insert';
-import { InsertFirstArray } from './insertFirst';
+import { Outlet } from 'react-router-dom';
 import { InitArray } from './initArray';
-import { UnshiftArray } from './unshift';
-import { RemoveArray } from './removeArray';
-import { PopArray } from './pop';
-import { RemoveFirstArray } from './removeFirst';
-import { RemoveFirstAndUndefined } from './removeFirstAndUndefined';
 const Array = () => {
   return (
     <>
       <InitArray />
-      <InsertArray/>
-      <PushArray />
-      <InsertFirstArray />
-      <UnshiftArray/>
-      <RemoveArray />
-      <PopArray />
-      <RemoveFirstArray />
-      <RemoveFirstAndUndefined />
+      <Outlet />
     </>
 
   );

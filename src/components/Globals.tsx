@@ -68,7 +68,10 @@ export const Wrapper = styled.div<StyleProps>`
 
 export const Block = styled.div`
   ${( { theme } ) => css`
-    border-bottom: 1px dotted ${theme.colors.grayDark};
-    margin-bottom: ${theme.spacings.medium};
+    .line{
+      border-top: 1px dotted ${theme.colors.grayDark};
+      margin-top: ${theme.spacings.medium};
+      padding-top: ${theme.spacings.medium};
+    }
   `}
 `;
